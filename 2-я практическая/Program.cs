@@ -53,42 +53,33 @@
 
             Console.WriteLine("Введите число от 1 до 100");
 
+
+            int nume = Convert.ToInt32(Console.ReadLine());
+
             while (true)
             {
-                string num = Console.ReadLine();
-
-                if (num == "Выйти")
+                if (nume < random)
                 {
+                    Console.WriteLine("Слишком мало, попробуй ещё");
+                    continue;
+                }
+
+                else if (nume > random)
+                {
+                    Console.WriteLine("Слишком много, попробуй поменьше");
+                    continue;
+                }
+
+                else if (nume == random)
+                {
+                    Console.WriteLine("CONGRATULATIONS!!!! Вы угадали число!");
+                    Console.WriteLine();
                     break;
                 }
-
-                else
-                {
-
-                    int nume = Convert.ToInt32(num);
-
-                    if (nume < random)
-                    {
-                        Console.WriteLine("Слишком мало, попробуй ещё");
-                        continue;
-                    }
-
-                    else if (nume > random)
-                    {
-                        Console.WriteLine("Слишком много, попробуй поменьше");
-                        continue;
-                    }
-
-                    else if (nume == random)
-                    {
-                        Console.WriteLine("CONGRATULATIONS!!!! Вы угадали число!");
-                        Console.WriteLine();
-                        break;
-                    }
-                }
             }
-            
         }
+
+    
 
         static void Tabl()
         {
